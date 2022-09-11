@@ -9,7 +9,6 @@ namespace StackAndQueueProblem
     internal class LinkedListQueue
     {
         Node head = null;
-
         internal void Enqueue(int data) // this method is used to add elements in queue
         {
             Node node = new Node(data);
@@ -25,7 +24,6 @@ namespace StackAndQueueProblem
                 temp.next = node;
             }
             Console.WriteLine("{0} inserted into Queue ", node.data);
-
         }
         internal void Display()// this method is used to display the elements in queue
         {
@@ -40,6 +38,18 @@ namespace StackAndQueueProblem
             {
                 Console.Write(temp.data + " ");
                 temp = temp.next;
+            }
+        }
+        internal void Dequeue()// this method is used to remove the elements from beginning
+        {
+            if (head == null)
+            {
+                Console.WriteLine("\nQueue is empty");
+            }
+            else
+            {
+                Console.WriteLine("\nThe Dequeue element is : " + head.data);
+                head = head.next;
             }
         }
     }
